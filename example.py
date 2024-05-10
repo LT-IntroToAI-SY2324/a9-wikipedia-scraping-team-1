@@ -62,3 +62,10 @@ string = "blah blah alopez339@cps.edu blah blah foo@bar.com"
 pat = re.compile("[\w.]+@[\w.]+")
 result = pat.findall(string)
 print(result)
+
+string = "Number: 1234123412341234 Name: Alan Lopez CVV: 123"
+pat = re.compile("Number: (?P<number>\d{15,16}) Name: (?P<name>\w+ \w+) CVV: (?P<cvv>\d{3})")
+result = pat.search(string)
+print(result.group("number"))
+print(result.group("name"))
+print(result.group("cvv"))
